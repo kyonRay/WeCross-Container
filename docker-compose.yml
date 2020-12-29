@@ -1,0 +1,13 @@
+version: '3'
+services:
+  wecross-demo:
+    build: .
+    container_name: wecross-demo
+    hostname: wecross
+    ports:
+      - 8265:80
+      - 8260:8250
+    tty: true
+    stdin_open: true
+    restart: "no"
+    image: wecross-demo:latest
