@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 COPY ./mysql-config.sh /
+COPY ./start-wecross.sh /etc/init.d/
 COPY ./start-wecross.sh /
 COPY ./wecross-nginx.conf /
 RUN apt-get update && \
@@ -11,6 +12,7 @@ RUN apt-get update && \
     service nginx start && \
     cp ./wecross-nginx.conf /etc/nginx/conf.d/wecross-nginx.conf && \
     nginx -s reload -c /etc/nginx/nginx.conf && \
+    chmod 755 /etc/init.d/start-wecross.sh && \
     curl -LO https://github.com/WeBankBlockchain/WeCross/releases/download/resources/download_demo.sh && \
     bash download_demo.sh && \
     cd ./wecross-demo && \
@@ -19,6 +21,7 @@ RUN apt-get update && \
     cd /wecross-demo/routers-payment/127.0.0.1-8250-25500/ && \
     sed -i '0,/127.0.0.1/s/127.0.0.1/0.0.0.0/' ./conf/wecross.toml && \
     cd -
+CMD [ "sh", "-c", "service start-wecross.sh start;bash" ]
 
 # curl -fsSL https://get.docker.com -o get-docker.sh && \
 # sh get-docker.sh && \
