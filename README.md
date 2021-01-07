@@ -12,6 +12,11 @@ cd WeCross-Container
 docker-compose up -d
 # long building...
 
+```
+
+if you have access issue, maybe the container service did not running, try run it manually.
+
+```bash
 docker exec -it wecross-demo bash
 
 # it will look like:
