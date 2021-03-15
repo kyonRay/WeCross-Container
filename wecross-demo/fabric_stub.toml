@@ -1,0 +1,20 @@
+[common]
+    name = 'fabric-mychannel'
+    type = 'Fabric1.4'
+
+[fabricServices]
+    channelName = 'mychannel'
+    orgUserName = 'fabric_admin'
+    ordererTlsCaFile = 'orderer-tlsca.crt'
+    ordererAddress = 'grpcs://orderer.example.com:7050'
+
+[orgs]
+    [orgs.Org1]
+        tlsCaFile = 'org1-tlsca.crt'
+        adminName = 'fabric_admin_org1'
+        endorsers = ['grpcs://peer0.org1.example.com:7051']
+
+    [orgs.Org2]
+        tlsCaFile = 'org2-tlsca.crt'
+        adminName = 'fabric_admin_org2'
+        endorsers = ['grpcs://peer0.org2.example.com:9051']

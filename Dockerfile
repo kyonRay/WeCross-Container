@@ -2,25 +2,27 @@ FROM ubuntu:latest
 COPY ./mysql-config.sh /
 COPY ./start-wecross.sh /etc/init.d/
 COPY ./start-wecross.sh /
-COPY ./wecross-nginx.conf /
+COPY ./stop-wecross.sh /
+COPY ./wecross-demo/ /wecross-demo/
+COPY ./pages.tar.gz /wecross-demo/
 RUN apt-get update && \
     ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     apt-get install -y tzdata && \
-    apt-get install -y openssl lsof curl expect tree fontconfig openjdk-8-jdk mysql-server nginx && \
+    apt-get install -y vim git net-tools openssl lsof curl expect tree fontconfig openjdk-8-jdk mysql-server unzip && \
     service mysql start && \
     bash mysql-config.sh && \
-    service nginx start && \
-    cp ./wecross-nginx.conf /etc/nginx/conf.d/wecross-nginx.conf && \
-    nginx -s reload -c /etc/nginx/nginx.conf && \
     chmod 755 /etc/init.d/start-wecross.sh && \
-    curl -LO https://github.com/WeBankBlockchain/WeCross/releases/download/resources/download_demo.sh && \
-    bash download_demo.sh && \
     cd ./wecross-demo && \
-    export CI_DB_PASSWORD=admin123456 && \
-    bash build_cross_gm.sh n && \
+    bash build_cross_gm.sh -H 127.0.0.1 -P 3306 -u root -p admin123456 && \
     cd /wecross-demo/routers-payment/127.0.0.1-8250-25500/ && \
     sed -i '0,/127.0.0.1/s/127.0.0.1/0.0.0.0/' ./conf/wecross.toml && \
-    cd -
+    cd - && \
+    cd ./WeCross-Account-Manager/conf && \
+    sed -i 's/useSSL=false/useSSL=false\&allowPublicKeyRetrieval=true/' application.toml && \
+    cd / && \
+    bash stop-wecross.sh && \
+    cd /wecross-demo && rm ./*.gz && rm -rf ./src && \
+    apt-get autoremove && apt-get autoclean
 CMD [ "sh", "-c", "service start-wecross.sh start;bash" ]
 
 # curl -fsSL https://get.docker.com -o get-docker.sh && \

@@ -1,0 +1,19 @@
+# WeCross
+WECROSS_VERSION='dev -s'
+# WeCross Console
+WECROSS_CONSOLE_VERSION='dev -s'
+# WeCross Account Manager
+WECROSS_ACCOUNT_MANAGER_VERSION='dev -s'
+# WeCross BCOS2.0 Stub
+WECROSS_BCOS2_STUB_VERSION='dev -s'
+# WeCross Fabric1.4 Stub
+WECROSS_FABRIC1_STUB_VERSION='dev -s'
+# WeCross Fabric2.0 Stub
+WECROSS_FABRIC2_STUB_VERSION='dev -s'
+# WeCross Java SDK
+WECROSS_JAVA_SDK_VERSION='dev -s'
+
+# FISCO BCOS
+BCOS_VERSION=v2.7.1
+# FISCO BCOS Console
+BCOS_CONSOLE_VERSION=v1.0.10

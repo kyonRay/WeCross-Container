@@ -3,7 +3,6 @@
 WECROSS_DEMO=/wecross-demo/
 
 service mysql start
-service nginx start
 
 cd ${WECROSS_DEMO}/bcos/nodes/127.0.0.1/
 bash start_all.sh
