@@ -10,7 +10,7 @@ enable_build_from_resource=0
 
 src_dir=$(pwd)'/src/'
 
-wecross_account_manager_url=https://github.com/WebankBlockchain/WeCross-Account-Manager.git
+wecross_account_manager_url=https://gitee.com/WeBank/WeCross-Account-Manager
 wecross_account_manager_branch=${default_compatibility_version}
 
 need_db_config_ask=true

@@ -9,7 +9,7 @@ A fast experience docker container builder for WeCross.
 ```bash
 git clone https://github.com/kyonRay/WeCross-Container
 cd WeCross-Container
-docker-compose up -d
+bash build.sh
 # long building...
 
 ```
@@ -17,16 +17,11 @@ docker-compose up -d
 if you have access issue, maybe the container service did not running, try run it manually.
 
 ```bash
-docker exec -it wecross-demo bash
-
-# it will look like:
->root@wecross:/
-
-bash start-wecross.sh
-
-# waiting... done :)
-```
+# if anything goes error
+# for clean all service
+bash clear.sh
+````
 
 ### Browser
 
-Put URL http://127.0.0.1:8265/wecross/index.html in browser, have fun! :)
+Put URL http://127.0.0.1:8260/wecross/s/index.html in browser, have fun! :)

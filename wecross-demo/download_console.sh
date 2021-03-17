@@ -10,7 +10,7 @@ enable_build_from_resource=0
 
 src_dir=$(pwd)'/src/'
 
-wecross_console_url=https://github.com/WebankBlockchain/WeCross-Console.git
+wecross_console_url=https://gitee.com/WeBank/WeCross-Console
 wecross_console_branch=${default_compatibility_version}
 
 LOG_INFO() {
@@ -196,11 +196,11 @@ download_get_account_scripts() {
     cd ${scripts_dir}
 
     LOG_INFO "Download get_account.sh ..."
-    Download https://raw.githubusercontent.com/FISCO-BCOS/console/master/tools/get_account.sh
+    cp /wecross-demo/bcos/get_account.sh .
     chmod u+x get_account.sh
 
     LOG_INFO "Download get_gm_account.sh ..."
-    Download https://raw.githubusercontent.com/FISCO-BCOS/console/master/tools/get_gm_account.sh
+    cp /wecross-demo/bcos/get_gm_account.sh .
     chmod u+x get_gm_account.sh
 
     cd -

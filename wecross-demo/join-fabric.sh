@@ -75,7 +75,13 @@ EOF
 config_router_fabric /wecross-demo/routers-payment/127.0.0.1-8250-25500 /fabric_certs
 
 cd ${ROOT}/routers-payment/127.0.0.1-8250-25500
+cp /wecross-demo/wecross.toml ./conf/wecross.toml
 bash stop.sh && bash start.sh
+cd -
+
+cd ${ROOT}/WeCross-Console
+cp /wecross-demo/console.toml ./conf/application.toml
+cd -
 
 # add chain account to org1-admin
 deploy_chain_account

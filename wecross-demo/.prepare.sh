@@ -40,20 +40,20 @@ prepare_bcos() {
     cd ${ROOT}/bcos/
     # Download
     LOG_INFO "Download build_chain.sh ..."
-    Download https://github.com/FISCO-BCOS/FISCO-BCOS/releases/download/${BCOS_VERSION}/build_chain.sh
+    Download https://gitee.com/FISCO-BCOS/FISCO-BCOS/raw/master/tools/build_chain.sh
     chmod u+x build_chain.sh
 
     LOG_INFO "Download get_account.sh ..."
-    Download https://raw.githubusercontent.com/FISCO-BCOS/console/master/tools/get_account.sh
+    Download https://gitee.com/FISCO-BCOS/console/raw/master/tools/get_account.sh
     chmod u+x get_account.sh
 
     LOG_INFO "Download get_gm_account.sh ..."
-    Download https://raw.githubusercontent.com/FISCO-BCOS/console/master/tools/get_gm_account.sh
+    Download https://gitee.com/FISCO-BCOS/console/raw/master/tools/get_gm_account.sh
     chmod u+x get_gm_account.sh
 
     LOG_INFO "Download fisco-bcos binary"
-    Download https://github.com/FISCO-BCOS/FISCO-BCOS/releases/download/${BCOS_VERSION}/fisco-bcos.tar.gz
-    Download https://github.com/FISCO-BCOS/FISCO-BCOS/releases/download/${BCOS_VERSION}/fisco-bcos-macOS.tar.gz
+    Download https://gitee.com/FISCO-BCOS/FISCO-BCOS/attach_files/606959/download/fisco-bcos.tar.gz
+    Download https://gitee.com/FISCO-BCOS/FISCO-BCOS/attach_files/606958/download/fisco-bcos-macOS.tar.gz
 
     cd -
 }

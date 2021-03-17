@@ -11,16 +11,16 @@ deps_dir=$(pwd)'/WeCross/plugin/'
 pages_dir=$(pwd)'/WeCross/pages/'
 src_dir=$(pwd)'/src/'
 
-wecross_url=https://github.com/WebankBlockchain/WeCross.git
+wecross_url=https://gitee.com/WeBank/WeCross
 wecross_branch=${default_compatibility_version}
 
-bcos_stub_url=https://github.com/WebankBlockchain/WeCross-BCOS2-Stub.git
+bcos_stub_url=https://gitee.com/WeBank/WeCross-BCOS2-Stub
 bcos_stub_branch=${default_compatibility_version}
 
-fabric_stub_url=https://github.com/WebankBlockchain/WeCross-Fabric1-Stub.git
+fabric_stub_url=https://gitee.com/WeBank/WeCross-Fabric1-Stub
 fabric_stub_branch=${default_compatibility_version}
 
-wecross_webapp_url=https://github.com/WebankBlockchain/WeCross-WebApp.git
+wecross_webapp_url=https://gitee.com/WeBank/WeCross-WebApp
 wecross_webapp_branch=${default_compatibility_version}
 
 LOG_INFO() {

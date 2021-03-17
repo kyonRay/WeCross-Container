@@ -1,0 +1,39 @@
+[common]
+    zone = 'payment'
+    visible = true
+
+[chains]
+    path = 'classpath:chains'
+
+[rpc] # rpc ip & port
+    address = '0.0.0.0'
+    port = 8250
+    caCert = 'classpath:ca.crt'
+    sslCert = 'classpath:ssl.crt'
+    sslKey = 'classpath:ssl.key'
+    sslSwitch = 2  # disable ssl:2, SSL without client auth:1 , SSL with client and server auth: 0
+    webRoot = 'classpath:pages'
+    mimeTypesFile = 'classpath:conf/mime.types' # set the content-types of a file
+    urlPrefix='wecross'
+
+[p2p]
+    listenIP = '0.0.0.0'
+    listenPort = 25500
+    caCert = 'classpath:ca.crt'
+    sslCert = 'classpath:ssl.crt'
+    sslKey = 'classpath:ssl.key'
+    peers = ['127.0.0.1:25501']
+
+[account-manager]
+    server =  '127.0.0.1:8340'
+    admin = 'org1-admin'
+    password = '123456'
+    sslKey = 'classpath:ssl.key'
+    sslCert = 'classpath:ssl.crt'
+    caCert = 'classpath:ca.crt'
+
+#[[htlc]]
+#    selfPath = 'payment.bcos.htlc'
+#    account1 = 'bcos_default_account'
+#    counterpartyPath = 'payment.fabric.htlc'
+#    account2 = 'fabric_default_account'
