@@ -2,26 +2,26 @@
 
 A fast experience docker container builder for WeCross.
 
-## Usage
+## 使用方法
 
-### command line
+### 命令行
 
 ```bash
 git clone https://github.com/kyonRay/WeCross-Container
 cd WeCross-Container
 bash build.sh
-# long building...
+# build.sh  脚本执行时间较长，请耐心等待...
 
 ```
 
-if you have access issue, maybe the container service did not running, try run it manually.
+如果执行步骤中出现错误，请手动执行以下命令，清空所有容器。
 
 ```bash
-# if anything goes error
 # for clean all service
 bash clear.sh
-````
+```
 
-### Browser
+### 浏览器
 
-Put URL http://127.0.0.1:8260/wecross/s/index.html in browser, have fun! :)
+浏览器输入 http://127.0.0.1:8260/wecross/s/index.html 即可，have fun! :)
+IP和端口号视部署实际情况而定，端口号可修改`./docker-compose.yml`文件。
