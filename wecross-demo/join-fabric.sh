@@ -71,6 +71,10 @@ EOF
     cd -
 }
 
+cd ${ROOT}/routers-payment/127.0.0.1-8250-25500
+bash stop.sh
+cd -
+
 # config fabric chain
 config_router_fabric /wecross-demo/routers-payment/127.0.0.1-8250-25500 /fabric_certs
 
