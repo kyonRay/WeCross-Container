@@ -99,7 +99,7 @@ build_console() {
 
 build_accounts() {
     LOG_INFO "Download get_account.sh ..."
-    Download https://raw.githubusercontent.com/FISCO-BCOS/console/master/tools/get_account.sh
+    Download https://raw.githubusercontent.com/FISCO-BCOS/console/${BCOS_VERSION}/tools/get_account.sh
     chmod u+x get_account.sh
     # generate accounts
     mkdir -p accounts
