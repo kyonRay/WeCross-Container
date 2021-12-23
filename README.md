@@ -4,6 +4,48 @@ A fast experience docker container builder for WeCross.
 
 ## 使用方法
 
+### 使用前提
+
+首先，需要生成Fabric 1.4.4的物料放置到对应文件夹中。这些物料可以使用Fabric v1.4.4的`first-network`生成。
+
+在`channel-artifacts`中放置以下文件：
+
+```shell
+tree fabric-network/channel-artifacts 
+fabric-network/channel-artifacts
+├── Org1MSPanchors.tx
+├── Org2MSPanchors.tx
+├── channel.tx
+└── genesis.block
+```
+
+在`crypto-config`中放置以下文件：
+
+```shell
+tree fabric-network/crypto-config -L 3
+fabric-network/crypto-config
+├── ordererOrganizations
+│   └── example.com
+│       ├── ca
+│       ├── msp
+│       ├── orderers
+│       ├── tlsca
+│       └── users
+└── peerOrganizations
+    ├── org1.example.com
+    │   ├── ca
+    │   ├── msp
+    │   ├── peers
+    │   ├── tlsca
+    │   └── users
+    └── org2.example.com
+        ├── ca
+        ├── msp
+        ├── peers
+        ├── tlsca
+        └── users
+```
+
 ### 命令行
 
 ```bash
